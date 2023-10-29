@@ -196,6 +196,77 @@ a.selected{
     background-color: #d63e50;
     color: #ecf0f1;
 }
+.container-usuario{
+    width: 80%;
+}
+.card-usuario{
+    width: 100%;
+    border: 1px solid #e6ecf5;
+}
+.card-title-usuario{
+    padding: 4%;
+    background-color: #f1bd4a;
+    color: #fff;
+    font-size: 18px;
+}
+.form-input-search-usuario{
+    width: 70%;
+    display: flex;
+    margin: 2% 2% 0% 2%;
+    border: 1px solid #e6ecf5;
+    padding: 2%;
+}
+.form-input-search-usuario img{
+    width: 5%;
+}
+.form-input-search-usuario input{
+    width: 95%;
+    padding-left: 2%;
+    border: none;
+}
+.form-input-search-usuario input:focus{
+    outline: none;
+}
+.card-table-usuario{
+    width: 100%;
+    padding: 2% 2% 4% 2%;
+}
+.card-table-usuario-head{
+    width: 96%;
+    border: 1px solid #e6ecf5;
+    display: flex;
+    margin: 2% 2% 0% 2%;
+    padding: 1%;
+    font-size: 14px;
+}
+.usuario-i{
+    width: 5%;
+}
+.usuario-name{
+    width: 25%;
+}
+.usuario-email{
+    width: 35%;
+}
+.usuario-dni{
+    width: 10%;
+}
+.usuario-estado{
+    width: 10%;
+}
+.usuario-acciones{
+    width: 15%;
+}
+.card-table-usuario-body{
+    width: 96%;
+    border: 1px solid #e6ecf5;
+    border-top: none;
+    display: flex;
+    margin: 0% 2%;
+    padding: 0% 1% 0% 1%;
+    padding: 1%;
+    font-size: 14px;
+}
 @media screen and (max-width: 760px){
     .body_move{
         margin-left: 0px;

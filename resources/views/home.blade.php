@@ -34,7 +34,7 @@
                 </div>
             </a>
 
-            <a href="#">
+            <a href="{{route('listar-usuario')}}">
                 <div class="option">
                     <i class="far fa-file" title="Portafolio"></i>
                     <h4>Usuario</h4>

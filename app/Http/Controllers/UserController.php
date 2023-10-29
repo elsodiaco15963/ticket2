@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\User_plugin;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -11,7 +12,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('home',compact('users'));
+        return view('user',compact('users'));
     }
 
     public function create()
@@ -40,5 +41,12 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('listar-usuario')->with('success', 'Usuario creado exitosamente.');
+    }
+
+    public function edit($id)
+    {
+        $users = User::findOrFail($id);
+        $plugins = User_plugin::all();
+        return view('user_edit', compact('users', 'plugins'));
     }
 }
