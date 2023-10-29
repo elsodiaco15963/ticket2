@@ -141,8 +141,61 @@ a.selected{
 .menu__side_move{
     width: 250px;
 }
-
-
+.container-register{
+    width: 40%;
+}
+.card-register{
+    width: 100%;
+    border: 1px solid #e6ecf5;
+}
+.card-title-register{
+    padding: 4%;
+    background-color: #f1bd4a;
+    color: #fff;
+    font-size: 18px;
+}
+.card-form-register{
+    width: 100%;
+    font-size: 16px;
+}
+.form-group-register{
+    display: flex;
+    padding: 4% 0% 2% 2%;
+    width: 96%;
+}
+.form-label{
+    color: #888da8;
+    width: 35%;
+    padding: 2%;
+}
+.form-input-container{
+    width: 65%;
+}
+.form-input{
+    width: 100%;
+    border: 1px solid #e6ecf5;
+    height: 100%;
+    padding: 5%;
+    font-size: 14px;
+}
+.button-container{
+    width: 96%;
+    text-align: right;
+    margin-top: 4%;
+}
+.button-submit{
+    background-color: #d7384a;
+    border-color: #d7384a;
+    color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.button-submit:hover{
+    background-color: #d63e50;
+    color: #ecf0f1;
+}
 @media screen and (max-width: 760px){
     .body_move{
         margin-left: 0px;
