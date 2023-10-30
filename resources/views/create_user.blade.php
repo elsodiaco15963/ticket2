@@ -5,7 +5,7 @@
         <div class="card-register">
             <div class="card-title-register">Crear Usuario</div>
             <div class="card-form-register">
-                <form method="POST" action="{{ route('crear-usuario') }}" onsubmit="return validarContrasenas()">
+                <form method="POST" action="{{ route('create_user') }}" onsubmit="return validarContrasenas()">
                 @csrf
                     <div class="form-group-register">
                         <div class="form-label">Nombres completos</div>

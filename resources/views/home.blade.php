@@ -27,30 +27,30 @@
 
         <div class="options__menu">	
 
-            <a href="{{route('crear-usuario')}}" class="selected">
+            <a href="{{route('create_user')}}" class="selected">
                 <div class="option">
-                    <i class="fas fa-home" title="Inicio"></i>
+                    <i class="fa-solid fa-plus" title="Nuevo usuario"></i>
                     <h4>Nuevo usuario</h4>
                 </div>
             </a>
 
-            <a href="{{route('listar-usuario')}}">
+            <a href="{{route('list_user')}}">
                 <div class="option">
-                    <i class="far fa-file" title="Portafolio"></i>
+                    <i class="fa-solid fa-users" title="Usuario"></i>
                     <h4>Usuario</h4>
                 </div>
             </a>
             
             <a href="#">
                 <div class="option">
-                    <i class="fas fa-video" title="Cursos"></i>
+                    <i class="fa-solid fa-plus" title="Nuevo ticket"></i>
                     <h4>Nuevo ticket</h4>
                 </div>
             </a>
 
             <a href="#">
                 <div class="option">
-                    <i class="far fa-sticky-note" title="Blog"></i>
+                    <i class="fa-solid fa-ticket" title="Ticket"></i>
                     <h4>Ticket</h4>
                 </div>
             </a>

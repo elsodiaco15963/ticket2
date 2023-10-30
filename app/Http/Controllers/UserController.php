@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\User_plugin;
+use App\Models\UserPlugin;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('create-user');
+        return view('create_user');
     }
 
     public function store(Request $request)
@@ -32,21 +32,46 @@ class UserController extends Controller
             'email.unique' => 'Correo en uso. Elige otro.',
             'dni.unique' => 'Dni en uso. Elige otro.',
         ]);
-
-        User::create([
+    
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'dni' => $request->dni,
         ]);
-
-        return redirect()->route('listar-usuario')->with('success', 'Usuario creado exitosamente.');
+    
+        // Crear el registro en la tabla user_plugin relacionado con el usuario
+        $user->userPlugin()->create([
+            'rol' => 1,
+            'estado' => 1,
+        ]);
+    
+        return redirect()->route('list_user')->with('success', 'Usuario creado exitosamente.');
     }
 
     public function edit($id)
     {
         $users = User::findOrFail($id);
         $plugins = User_plugin::all();
-        return view('user_edit', compact('users', 'plugins'));
+        return view('edit_user', compact('users', 'plugins'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $users = User::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->dni = $request->input('dni');
+        if ($request->filled('password')) {
+            // Actualiza la contraseña solo si se proporcionó una nueva
+            $users->password = bcrypt($request->input('password'));
+        }
+        $users->save();
+        return redirect()->route('list_user')->with('success', 'Participante registrado exitosamente.');
     }
 }

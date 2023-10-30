@@ -15,7 +15,7 @@
                     <div class="usuario-email">Email</div>
                     <div class="usuario-dni">DNI</div>
                     <div class="usuario-estado">Estado</div>
-                    <div class="usuario-acciones">Acciones</div>
+                    <div class="usuario-acciones">Editar</div>
                 </div>
                 @foreach ($users as $user)
                 <div class="card-table-usuario-body">
@@ -24,7 +24,9 @@
                     <div class="usuario-email">{{ $user->email }}</div>
                     <div class="usuario-dni">{{ $user->dni }}</div>
                     <div class="usuario-estado">Inactivo</div>
-                    <div class="usuario-acciones">Acciones</div>
+                    <div class="usuario-acciones">
+                        <a href="{{ route('edit_user', ['id' => $user->id]) }}">Editar</a>
+                    </div>
                 </div>
                 @endforeach
             </div>

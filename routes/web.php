@@ -22,9 +22,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/crear-usuario', [UserController::class, 'create'])->name('crear-usuario')->middleware('auth');
-Route::post('/crear-usuario', [UserController::class, 'store'])->middleware('auth');
-Route::get('/listar-usuario', [UserController::class, 'index'])->name('listar-usuario');
-Route::get('/usuario/{id}', [UserController::class, 'edit'])->name('usuario.edit');
+Route::get('/create_user', [UserController::class, 'create'])->name('create_user')->middleware('auth');
+Route::post('/create_user', [UserController::class, 'store'])->middleware('auth');
+Route::get('/list_user', [UserController::class, 'index'])->name('list_user');
+Route::get('/edit_user/{id}', [UserController::class, 'edit'])->name('edit_user');
+Route::put('/user/{id}', [UserController::class, 'update'])->name('update_user');
 
 
